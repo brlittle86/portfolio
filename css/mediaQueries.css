@@ -1,0 +1,28 @@
+@media only screen and (min-width: 640px) {
+  .heading-group-h1 {
+    padding: .1em .1em .1em 2em;
+    float: none;
+  }
+
+  #filters select {
+    width: 15em;
+    margin: .2em .2em;
+  }
+
+  #filters li {
+    display: inline;
+  }
+
+  .icon-menu {
+    visibility: hidden;
+  }
+
+  .main-nav ul {
+    display: block;
+    padding: 10px;
+  }
+
+  .main-nav li {
+    display: inline;
+  }
+}
