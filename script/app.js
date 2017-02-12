@@ -2,7 +2,7 @@
 
 var allProjects = [];
 
-function Project (data) {
+function Project(data) {
   this.title = data.title;
   this.shortDescription = data.shortDescription;
   this.longDescription = data.longDescription;
@@ -10,7 +10,7 @@ function Project (data) {
   this.completedOn = data.completedOn;
 }
 
-Project.prototype.toHtml = function() {
+Project.prototype.toHtml = function () {
   var $newProject = $('.template').clone();
   $newProject.removeClass('.template');
 
@@ -23,10 +23,10 @@ Project.prototype.toHtml = function() {
   return $newProject;
 };
 
-projectData.forEach(function(projectObject) {
+projectData.forEach(function (projectObject) {
   allProjects.push(new Project(projectObject));
 });
 
-allProjects.forEach(function(a) {
+allProjects.forEach(function (a) {
   $('#projects').append(a.toHtml());
 });
