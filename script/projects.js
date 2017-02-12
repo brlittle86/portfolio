@@ -11,19 +11,14 @@ function Project (opts) {
 }
 
 Project.prototype.toHtml = function() {
-  var $newProject = $('article.template').clone();
-  $newProject.removeClass('template');
+  var source = $('#project-template').html();
+  var templateRender = Handlebars.compile(source);
 
-  if (!this.createdOn) $newProject.addClass('draft');
-  $newProject.data('category', this.category);
+  this.daysAgo = parseInt((new Date() - new Date(this.createdOn))/60/60/24/1000);
+  this.publishStatus = this.createdOn ? `published ${this.daysAgo} days ago` : '(draft)';
 
-  $newProject.find('h1').html(this.title);
-  $newProject.find('.project-body').html(this.longDescription);
-  $newProject.find('time').attr('datetime', this.createdOn);
+  return templateRender(this);
 
-  $newProject.find('time').html('about ' + parseInt((new Date() - new Date(this.createdOn))/60/60/24/1000) + ' days ago');
-  $newProject.append('<hr>');
-  return $newProject;
 };
 
 projectData.sort(function(a,b) {

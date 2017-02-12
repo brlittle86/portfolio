@@ -11,6 +11,18 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/modules.css">
   <link rel="stylesheet" href="css/mediaQueries.css">
+  <script id="project-template" type="text/x-handlebars-template">
+    <article data-category="placeholder-category">
+      <header>
+        <h1>{{title}}</h1>
+        <div class="byline">
+          published
+          <time pubdate datetime="{{createdOn}}">Publish Time</time>
+        </div>
+      </header>
+      {{{body}}}
+    </article>
+  </script>
 </head>
 
 <body>
@@ -33,16 +45,7 @@
   </header>
   <main>
     <section id="projects" class="tab-content">
-      <article class="template" data-category="cat">
-        <header>
-          <h1>Title</h1>
-          <div class="byline">
-            published
-            <time pubdate datetime="2000-01-01">Publish Time</time>
-          </div>
-        </header>
-        <section class="project-body"></section>
-      </article>
+
     </section>
     <section id="about" class="tab-content">
       <header>
