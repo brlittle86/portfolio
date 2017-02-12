@@ -1,28 +1,24 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
+<head>
+  <meta charset="UTF-8">
+  <title>Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="vendor/styles/normalize.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/icons.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/modules.css">
+  <link rel="stylesheet" href="css/mediaQueries.css">
+</head>
 <body>
-
-  <head>
-    <title>Brandon's Portfolio</title>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="vendor/styles/normalize.css">
-    <link rel="stylesheet" href="css/icons.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/modules.css">
-    <link rel="stylesheet" href="css/mediaQueries.css">
-  </head>
-
   <header class="site-header clearfix">
     <section class="heading-group-h1">
-      <h1>Brandon Little</h1>
+      <h1>
+        Brandon Little
+      </h1>
+      <h2>Making it up as I go!</h2>
     </section>
-
     <nav class="main-nav">
       <div class="icon-menu"></div>
       <ul>
@@ -33,22 +29,24 @@
       </ul>
     </nav>
   </header>
-
-  <section class="template">
-    <h1 class="project-title"></h1>
-    <h2 class="project-date"></h2>
-    <p class="project-long-description"></p>
-  </section>
-
-  <div id="projects"></div>
-
-</body>
-
+  <main>
+    <section id="projects">
+      <article class="template" data-category="cat">
+        <header>
+          <h1>Title</h1>
+          <div class="byline">
+            published <time pubdate datetime="2000-01-01">Publish Time</time>
+          </div>
+        </header>
+        <section class="project-body"></section>
+      </article>
+    </section>
+  </main>
+  <footer>
+    &copy; 2017 Brandon Little | Project Portfolio
+  </footer>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-
-<script type="text/javascript" src="script/constructors.js"></script>
-<script type="text/javascript" src="script/objects.js"></script>
-<script type="text/javascript" src="script/functions.js"></script>
-<script type="text/javascript" src="script/app.js"></script>
-
+<script type="text/javascript" src="script/projectObjects.js"></script>
+<script type="text/javascript" src="script/projects.js"></script>
+</body>
 </html>
