@@ -9,3 +9,5 @@ projectView.handleMainNav = function () {
   });
   $('.main-nav .tab:first').click();
 };
+
+projectView.handleMainNav();
