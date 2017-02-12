@@ -1,44 +1,71 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <title>Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="vendor/styles/normalize.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/icons.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/modules.css">
+  <link rel="stylesheet" href="css/mediaQueries.css">
+</head>
+
 <body>
-
-  <head>
-    <title>Brandon's Portfolio</title>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="vendor/styles/normalize.css">
-    <link rel="stylesheet" href="css/icons.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/modules.css">
-    <link rel="stylesheet" href="css/mediaQueries.css">
-  </head>
-
   <header class="site-header clearfix">
     <section class="heading-group-h1">
-      <h1>Brandon Little</h1>
+      <h1>
+        Brandon Little
+      </h1>
+      <h2>Making it up as I go!</h2>
     </section>
-
     <nav class="main-nav">
       <div class="icon-menu"></div>
       <ul>
-        <li class="tab" data-content="articles"><a href="#" class="icon-home"> Home</a></li>
+        <li class="tab" data-content="projects"><a href="#" class="icon-home"> Home</a></li>
         <li class="tab" data-content="about"><a href="#" class="icon-address-book"> About</a></li>
         <li><a href="http://twitter.com/arczero1" target="_blank" class="icon-twitter3"> Twitter</a></li>
         <li><a href="http://github.com/brlittle86" target="_blank" class="icon-github"> GitHub</a></li>
       </ul>
     </nav>
   </header>
-
+  <main>
+    <section id="projects" class="tab-content">
+      <article class="template" data-category="cat">
+        <header>
+          <h1>Title</h1>
+          <div class="byline">
+            published
+            <time pubdate datetime="2000-01-01">Publish Time</time>
+          </div>
+        </header>
+        <section class="project-body"></section>
+      </article>
+    </section>
+    <section id="about" class="tab-content">
+      <header>
+        About Me
+      </header>
+      <section>
+        <h1>Some of my interests:</h1>
+        <ul>
+          <li>Coding</li>
+          <li>Playing video games</li>
+          <li>Comic Books</li>
+        </ul>
+      </section>
+    </section>
+  </main>
+  <footer>
+    &copy; 2017 Brandon Little | Project Portfolio
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="script/projectObjects.js"></script>
+  <script type="text/javascript" src="script/projects.js"></script>
+  <script type="text/javascript" src="script/projectView.js"></script>
 </body>
-
-<script type="text/javascript" src="script/constructors.js"></script>
-<script type="text/javascript" src="script/objects.js"></script>
-<script type="text/javascript" src="script/functions.js"></script>
-<script type="text/javascript" src="script/app.js"></script>
 
 </html>
