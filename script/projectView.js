@@ -2,7 +2,7 @@
 
 var projectView = {};
 
-articleView.handleMainNav = function () {
+projectView.handleMainNav = function () {
   $('.main-nav').on('click', '.tab', function () {
     $('.tab-content').hide();
     $('#' + $(this).data('content')).fadeIn();
