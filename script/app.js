@@ -2,7 +2,7 @@
 
 var allProjects = [];
 
-function  Project (data) {
+function Project (data) {
   this.title = data.title;
   this.shortDescription = data.shortDescription;
   this.longDescription = data.longDescription;
