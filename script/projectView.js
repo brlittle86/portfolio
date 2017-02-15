@@ -14,6 +14,6 @@ projectView.initIndexPage = function () {
   Project.all.forEach(function (a) {
     $('#projects').append(a.toHtml())
   });
-  
+
   projectView.handleMainNav();
 }
