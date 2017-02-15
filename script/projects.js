@@ -45,7 +45,7 @@ Project.fetchAll = function() {
           Project.loadAll(data);
           projectView.initIndexPage();
         }, function(error){
-          console.log('ERRRRRRRRROOOOOORRRR', error);
+          console.log('There was an error:', error);
         })
   }
 }
