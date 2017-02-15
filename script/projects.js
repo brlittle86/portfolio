@@ -23,16 +23,29 @@ Project.prototype.toHtml = function () {
 
 };
 
-Article.loadAll = function (projectData) {
+Project.loadAll = function (projectData) {
   projectData.sort(function (a, b) {
     return (new Date(b.createdOn)) - (new Date(a.createdOn));
   });
 
   projectData.forEach(function (projectObject) {
-    projects.push(new Project(projectObject));
+    Project.all.push(new Project(projectObject));
   });
 }
 
-projects.forEach(function (a) {
-  $('#projects').append(a.toHtml());
-});
+Project.fetchAll = function() {
+  if (localStorage.rawData) {
+    Project.loadAll(JSON.parse(localStorage.rawData));
+    projectView.initIndexPage();
+  } else {
+    $.getJSON('data/projectObjects.json')
+      .then(
+        function(data) {
+          localStorage.setItem('rawData', JSON.stringify(data));
+          Project.loadAll(data);
+          projectView.initIndexPage();
+        }, function(error){
+          console.log('ERRRRRRRRROOOOOORRRR', error);
+        })
+  }
+}
