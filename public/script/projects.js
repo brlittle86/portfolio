@@ -12,7 +12,7 @@ function Project(opts) {
 
 Project.all = [];
 
-Project.prototype.toHtml = function () {
+Project.prototype.toHtml = () => {
   var source = $('#project-template').html();
   var templateRender = Handlebars.compile(source);
 
@@ -23,29 +23,28 @@ Project.prototype.toHtml = function () {
 
 };
 
-Project.loadAll = function (projectData) {
-  projectData.sort(function (a, b) {
+Project.loadAll = projectData => {
+  projectData.sort((a, b) => {
     return (new Date(b.createdOn)) - (new Date(a.createdOn));
   });
 
-  projectData.forEach(function (projectObject) {
+  projectData.forEach( projectObject => {
     Project.all.push(new Project(projectObject));
   });
 }
 
-Project.fetchAll = function() {
+Project.fetchAll = starter => {
   if (localStorage.rawData) {
     Project.loadAll(JSON.parse(localStorage.rawData));
-    projectView.initIndexPage();
+    starter();
   } else {
     $.getJSON('data/projectObjects.json')
       .then(
-        function(data) {
-          localStorage.setItem('rawData', JSON.stringify(data));
-          Project.loadAll(data);
-          projectView.initIndexPage();
-        }, function(error){
-          console.log('There was an error:', error);
-        })
+      data => {
+        localStorage.setItem('rawData', JSON.stringify(data));
+        Project.fetchAll();
+      }, error => {
+        console.log('There was an error:', error);
+      })
   }
 }
