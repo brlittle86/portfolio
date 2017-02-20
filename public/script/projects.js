@@ -33,17 +33,17 @@ Project.loadAll = function (projectData) {
   });
 }
 
-Project.fetchAll = function (starter) {
+Project.fetchAll = (starter) => {
   if (localStorage.rawData) {
     Project.loadAll(JSON.parse(localStorage.rawData));
     starter();
   } else {
     $.getJSON('data/projectObjects.json')
       .then(
-      function (data) {
+      (data) => {
         localStorage.setItem('rawData', JSON.stringify(data));
-        Project.fetchAll();
-      }, function (error) {
+        Project.fetchAll(starter);
+      }, (error) => {
         console.log('There was an error:', error);
       })
   }
