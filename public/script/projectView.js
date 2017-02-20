@@ -2,16 +2,16 @@
 
 var projectView = {};
 
-projectView.handleMainNav = () => {
-  $('.main-nav').on('click', '.tab', () => {
+projectView.handleMainNav = function () {
+  $('.main-nav').on('click', '.tab', function () {
     $('.tab-content').hide();
     $('#' + $(this).data('content')).fadeIn();
   });
   $('.main-nav .tab:first').click();
 };
 
-projectView.initIndexPage = () => {
-  Project.all.forEach( a => {
+projectView.initIndexPage = function () {
+  Project.all.forEach(function (a) {
     $('#projects').append(a.toHtml())
   });
 
