@@ -1,19 +1,21 @@
 'use strict';
+(function (module) {
+  var projectView = {};
 
-var projectView = {};
+  projectView.handleMainNav = function () {
+    $('.main-nav').on('click', '.tab', function () {
+      $('.tab-content').hide();
+      $('#' + $(this).data('content')).fadeIn();
+    });
+    $('.main-nav .tab:first').click();
+  };
 
-projectView.handleMainNav = function () {
-  $('.main-nav').on('click', '.tab', function () {
-    $('.tab-content').hide();
-    $('#' + $(this).data('content')).fadeIn();
-  });
-  $('.main-nav .tab:first').click();
-};
+  projectView.initIndexPage = function () {
+    Project.all.forEach(function (a) {
+      $('#projects').append(a.toHtml())
+    });
 
-projectView.initIndexPage = function () {
-  Project.all.forEach(function (a) {
-    $('#projects').append(a.toHtml())
-  });
-
-  projectView.handleMainNav();
-}
+    projectView.handleMainNav();
+  }
+  module.projectView = projectView;
+})(window);
