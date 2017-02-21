@@ -10,8 +10,8 @@
     $('.main-nav .tab:first').click();
   };
 
-  projectView.initIndexPage = function () {
-    Project.all.forEach(function (a) {
+  projectView.initIndexPage = () => {
+    Project.all.forEach((a) => {
       $('#projects').append(a.toHtml())
     });
 
