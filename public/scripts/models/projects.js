@@ -51,5 +51,7 @@
     }
   }
 
+  Project.fetchAll(projectView.initIndexPage);
+
   module.Project = Project;
 })(window);

@@ -1,12 +1,13 @@
 'use strict';
 
 (function (module) {
-  const aboutController = {};
+  const projectController = {};
 
-  aboutController.init = () => {
-    $('#projects').hide();
-    $('#about').show();
+  projectController.init = () => {
+    Project.fetchAll(projectView.initIndexPage);
+    $('#about').hide();
+    $('#projects').show();
   }
 
-  module.aboutController = aboutController;
+  module.projectController = projectController;
 })(window);
