@@ -33,19 +33,18 @@ Project.loadAll = function (projectData) {
   });
 }
 
-Project.fetchAll = function() {
+Project.fetchAll = (starter) => {
   if (localStorage.rawData) {
     Project.loadAll(JSON.parse(localStorage.rawData));
-    projectView.initIndexPage();
+    starter();
   } else {
     $.getJSON('data/projectObjects.json')
       .then(
-        function(data) {
-          localStorage.setItem('rawData', JSON.stringify(data));
-          Project.loadAll(data);
-          projectView.initIndexPage();
-        }, function(error){
-          console.log('There was an error:', error);
-        })
+      (data) => {
+        localStorage.setItem('rawData', JSON.stringify(data));
+        Project.fetchAll(starter);
+      }, (error) => {
+        console.log('There was an error:', error);
+      })
   }
 }

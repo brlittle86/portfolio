@@ -7,10 +7,10 @@ const PORT = process.env.PORT || 8686;
 
 app.use(express.static('./public'));
 
-app.get('', function(request, response) {
+app.get('', (request, response) => {
   response.sendFile('index.html', { root: './public'});
 });
 
-app.listen(PORT, function() {
+app.listen(PORT, () => {
   console.log('Our amazing server app is being served at localhost:'+PORT);
 });
