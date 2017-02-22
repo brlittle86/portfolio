@@ -4,7 +4,6 @@
   const projectController = {};
 
   projectController.init = () => {
-    Project.fetchAll(projectView.initIndexPage);
     $('#about').hide();
     $('#projects').show();
   }
