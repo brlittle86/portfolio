@@ -35,8 +35,8 @@
     <nav class="main-nav">
       <div class="icon-menu"></div>
       <ul>
-        <li class="tab" data-content="projects"><a href="#" class="icon-home"> Home</a></li>
-        <li class="tab" data-content="about"><a href="#" class="icon-address-book"> About</a></li>
+        <li class="tab" data-content="projects"><a href="/" class="icon-home"> Home</a></li>
+        <li class="tab" data-content="about"><a href="/about" class="icon-address-book"> About</a></li>
         <li><a href="http://twitter.com/arczero1" target="_blank" class="icon-twitter3"> Twitter</a></li>
         <li><a href="http://github.com/brlittle86" target="_blank" class="icon-github"> GitHub</a></li>
       </ul>
@@ -66,11 +66,12 @@
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
-  <script type="text/javascript" src="script/projects.js"></script>
-  <script type="text/javascript" src="script/projectView.js"></script>
-  <script>
-    Project.fetchAll();
-  </script>
+  <script src="/vendor/scripts/page.js"></script>
+  <script type="text/javascript" src="scripts/models/projects.js"></script>
+  <script type="text/javascript" src="scripts/views/projectView.js"></script>
+  <script type="text/javascript" src="/scripts/controllers/projectController.js"></script>
+  <script type="text/javascript" src="/scripts/controllers/aboutController.js"></script>
+  <script type="text/javascript" src="/scripts/controllers/routes.js"></script>
 </body>
 
 </html>
