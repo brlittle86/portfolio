@@ -1,31 +1,24 @@
 'use strict';
-(function (module) {
-  var projectView = {};
 
-  projectView.initIndexPage = () => {
-    Project.all.forEach((a) => {
-      $('#projects').append(a.toHtml())
-    });
+(function(module) {
+  const repoView = {};
 
-  }
-  Project.fetchAll = () => {
-    if (localStorage.rawData) {
-      Project.loadAll(JSON.parse(localStorage.rawData));
-      projectView.initIndexPage();
-    } else {
-      $.getJSON('data/projectObjects.json')
-        .then(
-        data => {
-          localStorage.setItem('rawData', JSON.stringify(data));
-          Project.loadAll(data);
-          projectView.initIndexPage();
-        }, error => {
-          console.log('There was an error:', error);
-        })
-    }
-  }
+  const ui = function() {
+    let $about = $('#about');
 
-  Project.fetchAll(projectView.initIndexPage);
+    $about.find('ul').empty();
+    $about.show().siblings().hide();
+  };
 
-  module.projectView = projectView;
+  const render = Handlebars.compile($('#repo-template').text());
+
+  repoView.index = function() {
+    ui();
+
+    $('#projects').append(
+      repos.with('name').map(render)
+    );
+  };
+
+  module.repoView = repoView;
 })(window);
