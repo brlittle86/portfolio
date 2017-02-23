@@ -4,10 +4,10 @@
   const repoView = {};
 
   const ui = function() {
-    let $about = $('#about');
+    let $projects = $('#projects');
 
-    $about.find('ul').empty();
-    $about.show().siblings().hide();
+    $projects.empty();
+    $projects.show().siblings().hide();
   };
 
   const render = Handlebars.compile($('#repo-template').text());
