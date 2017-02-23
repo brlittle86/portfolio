@@ -27,6 +27,7 @@
   "homepage": "https://github.com/brlittle86/portfolio#readme",
   "dependencies": {
     "express": "^4.14.1",
-    "express-request-proxy": "^2.0.0"
+    "express-request-proxy": "^2.0.0",
+    "pg": "^6.1.2"
   }
 }
