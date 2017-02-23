@@ -4,6 +4,7 @@ const pg = require('pg');
 const express = require('express');
 const requestProxy = require('express-request-proxy');
 const app = express();
+const conString = `${process.env.DATABASE_URL}`;
 const client = new pg.Client(conString);
 client.connect();
 
