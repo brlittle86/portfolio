@@ -9,11 +9,11 @@ const client = new pg.Client(conString);
 client.connect();
 
 const PORT = process.env.PORT || 8686;
-const conString = `${process.env.DATABASE_URL}`;
 
 app.use(express.static('./public'));
 
 app.get('/', (request, response) => response.sendFile('index.html', {root: './public'}));
+app.get('/about', (request, response) => response.sendFile('index.html', {root: './public'}));
 
 app.get('/github/*', proxyGitHub);
 
